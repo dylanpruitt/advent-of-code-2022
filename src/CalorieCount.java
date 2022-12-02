@@ -22,7 +22,11 @@ public class CalorieCount {
 				}
 			}
 			
+			// 1st star solution
 			System.out.println(calorieCounts.stream().max((a,b) -> a - b));
+			
+			// 2nd star solution
+			System.out.println(calorieCounts.stream().sorted((a,b) -> b - a).limit(3).reduce(Integer::sum));
 			
 			reader.close();
 		} catch (FileNotFoundException e) {
